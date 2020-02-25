@@ -55,7 +55,6 @@ export const addLog = log => async dispatch => {
 export const deleteLog = id => async dispatch => {
   try {
     setLoading();
-    console.log(id);
     await fetch(`/api/logs/${id}`, {
       method: 'DELETE'
     });
