@@ -7,14 +7,14 @@ Add and Delete Techs
 
 ### Front-end:
 
--React with Redux
+- React with Redux
 
--Materialize and css
+- Materialize and css
 
 ### Back-end:
 
--NodeJS with Express
+- NodeJS with Express
 
--MongoDB
+- MongoDB
 
 Deployed to Heroku
