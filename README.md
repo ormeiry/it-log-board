@@ -1,21 +1,17 @@
 # it-log-board
-Full stack app
+## Full stack project for IT log board
 
-
-Full stack project for IT log board
-
-
+### what can you do?
 Add, Update and Delete Logs
-
 Add and Delete Techs
 
-Front-end:
+### Front-end:
 
 -React with Redux
 
 -Materialize and css
 
-Back-end:
+### Back-end:
 
 -NodeJS with Express
 
