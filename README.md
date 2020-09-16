@@ -18,3 +18,6 @@ Add and Delete Techs
 - MongoDB
 
 Deployed to Heroku
+
+<img src="itLogger.png" alt="itLogger" width="700"/>
+
