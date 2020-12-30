@@ -3,73 +3,71 @@ import {
   ADD_TECH,
   DELETE_TECH,
   SET_LOADING,
-  TECHS_ERROR
-} from './types';
+  TECHS_ERROR,
+} from "./types";
 
-export const getTechs = () => async dispatch => {
+export const getTechs = () => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await fetch('/api/techs');
+    const res = await fetch("/api/techs");
     const data = await res.json();
     dispatch({
       type: GET_TECHS,
-      payload: data
+      payload: data,
     });
   } catch (err) {
     dispatch({
       type: TECHS_ERROR,
-      payload: err.response.statusText
+      payload: err.response.statusText,
     });
   }
 };
 
-export const addTech = tech => async dispatch => {
+export const addTech = (tech) => async (dispatch) => {
   try {
     setLoading();
-
-    const res = await fetch('/api/techs', {
-      method: 'POST',
+    const res = await fetch("/api/techs", {
+      method: "POST",
       body: JSON.stringify(tech),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        "Content-Type": "application/json",
+      },
     });
     const data = await res.json();
-
     dispatch({
       type: ADD_TECH,
-      payload: data
+      payload: data,
     });
   } catch (err) {
     dispatch({
       type: TECHS_ERROR,
-      payload: err.response.statusText
+      payload: err.response.statusText,
     });
   }
 };
 
-export const deleteTech = id => async dispatch => {
+export const deleteTech = (id) => async (dispatch) => {
   try {
     setLoading();
 
     await fetch(`/api/techs/${id}`, {
-      method: 'DELETE'
+      method: "DELETE",
     });
     dispatch({
       type: DELETE_TECH,
-      payload: id
+      payload: id,
     });
   } catch (err) {
     dispatch({
       type: TECHS_ERROR,
-      payload: err.response.statusText
+      payload: err.response.statusText,
     });
   }
 };
 
 export const setLoading = () => {
   return {
-    type: SET_LOADING
+    type: SET_LOADING,
   };
 };
