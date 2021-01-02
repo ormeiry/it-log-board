@@ -1,0 +1,16 @@
+body {
+  background: rgb(36, 34, 34);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 30%;
+  position: absolute;
+  right: 10%;
+  bottom: 4%;
+  list-style: none;
+  transform: scale(0.7);
+}

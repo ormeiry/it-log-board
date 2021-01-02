@@ -12,7 +12,7 @@ const SearchBar = ({ searchLogs, clearSearch, filtered }) => {
     }
   });
 
-  const onChange = e => {
+  const onChange = (e) => {
     if (text.current.value !== '') {
       searchLogs(e.target.value);
     } else {
@@ -21,7 +21,7 @@ const SearchBar = ({ searchLogs, clearSearch, filtered }) => {
   };
 
   return (
-    <nav style={{ marginBottom: '30px' }} className='blue'>
+    <nav style={{ marginBottom: '30px' }} className='orange darken-2'>
       <div className='nav-wrapper'>
         <form>
           <div className='input-field'>
@@ -45,7 +45,7 @@ const SearchBar = ({ searchLogs, clearSearch, filtered }) => {
 
 SearchBar.propTypes = {
   searchLogs: PropTypes.func.isRequired,
-  clearSearch: PropTypes.func.isRequired
+  clearSearch: PropTypes.func.isRequired,
 };
 
 export default connect(null, { searchLogs, clearSearch })(SearchBar);
