@@ -4,12 +4,18 @@ const AddBtn = () => {
   return (
     <div className='buttons'>
       <li>
-        <a href='#tech-list-modal' className='btn-floating green modal-trigger'>
+        <a
+          href='#tech-list-modal'
+          className='btn-floating btn-large green modal-trigger'
+        >
           <i className='material-icons'>person</i>
         </a>
       </li>
       <li>
-        <a href='#add-tech-modal' className='btn-floating red modal-trigger'>
+        <a
+          href='#add-tech-modal'
+          className='btn-floating btn-large red modal-trigger'
+        >
           <i className='material-icons'>person_add</i>
         </a>
       </li>
