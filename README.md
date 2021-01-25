@@ -9,7 +9,7 @@ Add and Delete Techs
 
 ### Front-end:
 
-- React with Redux
+- React with Redux (TODO next -> use Redux hooks)
 
 - Materialize and CSS
 
