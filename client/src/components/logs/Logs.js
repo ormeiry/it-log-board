@@ -16,7 +16,6 @@ const Logs = () => {
   if (loading || logs === null) {
     return <Preloader />;
   }
-  console.log(logs, loading, filtered);
   return (
     <ul className='collection with-header'>
       <li className='collection-header'>
