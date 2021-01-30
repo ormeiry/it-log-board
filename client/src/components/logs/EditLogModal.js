@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import TechSelectOptions from '../techs/TechSelectOptions';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
 import { updateLog } from '../../actions/logActions';
 import M from 'materialize-css/dist/js/materialize.min.js';
 
-const EditLogModal = ({ current, updateLog }) => {
+const EditLogModal = () => {
   const [message, setMessage] = useState('');
   const [attention, setAttention] = useState(false);
   const [tech, setTech] = useState('');
+
+  const { current } = useSelector((state) => state.log);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (current) {
@@ -27,12 +29,12 @@ const EditLogModal = ({ current, updateLog }) => {
         message,
         attention,
         tech,
-        date: new Date()
+        date: new Date(),
       };
 
-      updateLog(updLog);
+      dispatch(updateLog(updLog));
       M.toast({ html: `Log updated by ${tech}` });
-      // Clear fields
+
       setMessage('');
       setTech('');
       setAttention(false);
@@ -48,7 +50,7 @@ const EditLogModal = ({ current, updateLog }) => {
               type='text'
               name='message'
               value={message}
-              onChange={e => setMessage(e.target.value)}
+              onChange={(e) => setMessage(e.target.value)}
             />
           </div>
           <div className='row'>
@@ -57,7 +59,7 @@ const EditLogModal = ({ current, updateLog }) => {
                 name='tech'
                 value={tech}
                 className='browser-default'
-                onChange={e => setTech(e.target.value)}
+                onChange={(e) => setTech(e.target.value)}
               >
                 <option value='' disabled>
                   Select Technician
@@ -75,7 +77,7 @@ const EditLogModal = ({ current, updateLog }) => {
                     className='filled-in'
                     checked={attention}
                     value={attention}
-                    onChange={e => setAttention(!attention)}
+                    onChange={(e) => setAttention(!attention)}
                   />
                   <span>Needs Attention</span>
                 </label>
@@ -99,16 +101,7 @@ const EditLogModal = ({ current, updateLog }) => {
 
 const modalStyle = {
   width: '75%',
-  height: '75%'
+  height: '75%',
 };
 
-EditLogModal.propTypes = {
-  updateLog: PropTypes.func.isRequired,
-  current: PropTypes.object
-};
-
-const mapStateToProps = state => ({
-  current: state.log.current
-});
-
-export default connect(mapStateToProps, { updateLog })(EditLogModal);
+export default EditLogModal;
