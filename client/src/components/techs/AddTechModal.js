@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTech } from '../../actions/techActions';
-import { getTechs } from '../../actions/techActions';
 import M from 'materialize-css/dist/js/materialize.min.js';
 
 const AddTechModal = () => {
@@ -27,10 +26,6 @@ const AddTechModal = () => {
     }
   };
 
-  useEffect(() => {
-    dispatch(getTechs());
-    // eslint-disable-next-line
-  }, [onSubmit]);
   return (
     <div id='add-tech-modal' className='modal'>
       <div className='modal-content'>
