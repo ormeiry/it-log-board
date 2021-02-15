@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
 import { addTech } from '../../actions/techActions';
 import { getTechs } from '../../actions/techActions';
 import M from 'materialize-css/dist/js/materialize.min.js';
@@ -74,11 +73,6 @@ const AddTechModal = () => {
       </div>
     </div>
   );
-};
-
-AddTechModal.propTypes = {
-  addTech: PropTypes.func.isRequired,
-  getTechs: PropTypes.func.isRequired,
 };
 
 export default AddTechModal;
