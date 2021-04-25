@@ -2,6 +2,8 @@
 
 ## Full stack project for IT log board
 
+### This project was part of a React/NodeJS course. It was very fun working on this, I have learned a lot. 
+
 ### what can you do?
 
 Add, Update and Delete Logs
